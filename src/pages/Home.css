@@ -1,0 +1,21 @@
+.home .card {
+  align-content: center;
+  padding: 20px;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+.home .card:hover{
+  box-shadow: none;
+}
+.card a {
+  text-align: center;
+  margin: 1rem auto;
+  display: block;
+  color: #7380ec;
+  text-decoration: none;
+}
+.card a:hover {
+  color: rgba(219, 34, 210, 0.164);
+}
