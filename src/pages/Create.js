@@ -34,7 +34,7 @@ const validationSchema = yup.object({
   author: yup.string().required("Required"),
   body: yup.string().required("Required"),
 });
-export default function Create() {
+export default function Create({ loadData }) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -51,7 +51,9 @@ export default function Create() {
         .post(url, values)
         .then((res) => {
           console.log("object", res.data);
+          loadData();
           resetForm();
+          handleClose();
         })
         .catch((err) => {
           console.log("first", err.message);
@@ -74,6 +76,7 @@ export default function Create() {
       >
         <Box sx={style}>
           <MyForm component="form" onSubmit={formik.handleSubmit}>
+            <h1>Create</h1>
             <MyFormControl>
               <TextField
                 fullWidth
