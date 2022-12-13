@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 import Create from "./Create";
+import Edite from "./Edit";
 // Styles
 import "./Home.css";
 export default function Home() {
@@ -81,6 +82,13 @@ export default function Home() {
             <h3>{article.title}</h3>
             <p>written by {article.author}</p>
             <Link to={`/articles/${article.id}`}>Read more ...</Link>
+            <div className="delete">
+              <Edite
+                article={article.id}
+                currentBank={currentBank}
+                loadData={loadData}
+              />
+            </div>
           </div>
         ))}
     </div>
